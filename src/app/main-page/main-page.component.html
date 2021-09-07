@@ -1,6 +1,13 @@
 <div class="app-wrapper">
 
-  <div class="filter gl-padd-x24" [formGroup]="form">
+  <div class="filter gl-padd-x24" [formGroup]="form" cdkDrag>
+    <div class="filter-drug-btn">
+      <div>
+        <mat-icon class="min-width">more_vert</mat-icon>
+        <mat-icon>more_vert</mat-icon>
+      </div>
+    </div>
+
     <app-search-panel (searchTermChanded)="updateFilters($event)" placeholder="Search" class="gl-mar-r16">
     </app-search-panel>
     <app-filters-panel (filterTermChanded)="updateFilters($event)">
@@ -16,3 +23,7 @@
   </div>
 
 </div>
+<!-- <div cdkDrop>
+  
+<div class="box" cdkDrag>Drag me around!</div>
+</div> -->

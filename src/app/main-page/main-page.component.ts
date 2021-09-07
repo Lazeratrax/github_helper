@@ -40,7 +40,6 @@ export class MainPageComponent implements OnInit {
         return this.githubApiService.getRepositories(params)
           .pipe(
             tap((data: any) => {
-              console.log('rereerrer', data);
               this.githubApiService.updateStoredNextPageToken(data.page);
             }),
             map((data: any) => this.githubApiService.updatestoredRepo(data.items))
@@ -58,7 +57,6 @@ export class MainPageComponent implements OnInit {
   }
 
   public addToFavorites(repo: any): void {
-    console.log('sdsdsvdsvds', repo)
     this.githubApiService.addToFavorites(repo);
   }
 
