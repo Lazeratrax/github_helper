@@ -1,0 +1,18 @@
+<div class="app-wrapper">
+
+  <div class="filter gl-padd-x24" [formGroup]="form">
+    <app-search-panel (searchTermChanded)="updateFilters($event)" placeholder="Search" class="gl-mar-r16">
+    </app-search-panel>
+    <app-filters-panel (filterTermChanded)="updateFilters($event)">
+    </app-filters-panel>
+  </div>
+
+  <div class="list-videos">
+    <app-main-item class="app-main-item" *ngFor="let repo of (repos$ | async)" [repo]="repo"
+      (addToFavorites)="addToFavorites($event)">
+    </app-main-item>
+
+    <button *ngIf="!disableCheckbox" mat-button color="accent" (click)="loadMoreRepositories()">load more</button>
+  </div>
+
+</div>

@@ -1,0 +1,41 @@
+<div class="info-wrapper">
+
+  <mat-card class="info-card">
+    <a class="info-undo" [routerLink]="['../../']">
+      <fa-icon class="faUndo" [icon]="faUndo"></fa-icon>
+    </a>
+
+    <mat-card-header class="info-repo">
+
+      <div>
+        <mat-card-title>{{ infoData.full_name}}</mat-card-title>
+        <mat-card-subtitle>Created at {{dateOfCreation}}</mat-card-subtitle>
+      </div>
+      <p>
+        {{infoData.description.length > 200 ? ((infoData.description | slice:0:200) + '...') : infoData.description}}
+      </p>
+      <mat-card-actions>
+        <button class="info-btn" mat-flat-button color="primary">
+
+          <a style="color: white" href="{{infoData.html_url}}"> See repo</a>
+        </button>
+      </mat-card-actions>
+    </mat-card-header>
+    <hr>
+    <mat-card-content class="info-author">
+      <h2>About author: </h2>
+      <div class="info-author-wrapper">
+        <div class="info-author-content">
+          <p>{{infoData.login}}</p>
+          <a href="{{infoData.urlAuthor}}">See profile</a>
+        </div>
+        <div class="info-img">
+          <img mat-card-image src="{{infoData.avatar_url}}" alt="author">
+        </div>
+
+      </div>
+
+    </mat-card-content>
+
+  </mat-card>
+</div>

@@ -1,0 +1,5 @@
+<label class="search">
+  <input type="search" name="search" [formControl]="searchControl"
+         [placeholder]="placeholder">
+  <mat-icon *ngIf="searchControl.value" (click)="searchControl.setValue('')">close</mat-icon>
+</label>

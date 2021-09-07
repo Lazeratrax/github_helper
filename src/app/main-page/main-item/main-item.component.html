@@ -1,0 +1,45 @@
+<article *ngIf="repo; else noMessage" class="repo-item">
+
+  <mat-card class="repo-item-card">
+    <div class="repo-item-card__head">
+      <div class="repo-item-card__head-content">
+        <mat-card-title class="repo-item-card__title">
+          <div class="title-left">
+            {{trimName }}
+            <a class="repo-item-card__link" (click)="goToInfoPage()">
+              <span class="link">More info
+                <fa-icon class="faLongArrowAltRight" [icon]="faLongArrowAltRight"></fa-icon>
+              </span>
+            </a>
+          </div>
+
+          <div class="repo-item-card__content-stars">
+
+            <fa-icon class="faCodeBranch" [icon]="faCodeBranch"></fa-icon>
+            {{ repo.forks_count }}
+            <fa-icon class="faQuestionCircle" [icon]="faQuestionCircle"></fa-icon>
+            {{ repo.open_issues_count }}
+
+            <mat-icon>star half</mat-icon>
+            {{repo.stargazers_count}}
+          </div>
+        </mat-card-title>
+
+        <div class="repo-item-card__content">
+          {{trimDescription}}
+        </div>
+
+      </div>
+
+      <button mat-icon-button color="warn" aria-label="like icon" class="repo-item-card__btn"
+        (click)="toggleFavorite()">
+        <mat-icon class="{{isFavorite ? 'remove-favorite' : 'make-favorite'}}">favorite</mat-icon>
+      </button>
+    </div>
+  </mat-card>
+
+</article>
+
+<ng-template #noMessage>
+  <article class="noMessage"><a href="#">NO DATA</a></article>
+</ng-template>

@@ -1,0 +1,19 @@
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  grid-gap: 5px;
+  gap: 5px;
+
+  &-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 18px 15px 0;
+    background-color: rgb(243, 243, 243);
+    border-radius: 17px;
+    padding-bottom: 18px;
+  }
+}

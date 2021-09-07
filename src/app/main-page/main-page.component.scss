@@ -1,0 +1,39 @@
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  max-width: 100vw;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.list-videos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0.5rem;
+  color: var(--slate-grey);
+  text-decoration: none;
+  max-width: 500px;
+  width: 100%;
+}
+
+.filter {
+  margin-bottom: 24px;
+}
+
+.gl-d-flex {
+  display: flex;
+}
+
+.gl-mar-r16 {
+  margin-right: 16px;
+}
+
+.app-main-item {
+  width: 100%;
+}
